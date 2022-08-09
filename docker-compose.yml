@@ -1,0 +1,21 @@
+services:
+  app:
+    container_name: auth-node-app
+    build: .
+    ports:
+      - "3000:3000"
+    links: 
+      - db
+    volumes:
+      - .:/app
+  db:
+    container_name: db-auth-node-app
+    image: mongo
+    env_file:
+      - ./.env
+    ports:
+      - "27017:27017"
+    volumes:
+      - db-data:/data/db
+volumes:
+  db-data:
