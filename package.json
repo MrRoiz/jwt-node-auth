@@ -1,12 +1,13 @@
 {
   "name": "jsw-auth-test",
-  "type": "module",
   "version": "1.0.0",
   "description": "Simple auth test in NodeJS and MongoDB",
   "main": "index.js",
   "author": "Oscar Ruiz",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2"
   }
 }

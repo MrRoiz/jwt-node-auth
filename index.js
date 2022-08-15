@@ -1,9 +1,12 @@
-import express from 'express'
+const express = require("express");
+const applyRoutes = require("./src/routes/index.js");
+const env = require('./src/config/envLoader');
 
-const app = express()
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+app.use(express.json());
+applyRoutes(app);
 
-app.listen(3000)
+app.listen(env.NODE_PORT, () => {
+	console.log(`Listening on port ${env.NODE_PORT}`);
+});
